@@ -90,7 +90,7 @@ def updateStudent(id):
                 email = %s
             WHERE id = %s
         """, (name, course, yearLevel, email, id))
-        flash('Employee Updated Successfully')
+        flash('Student Updated Successfully')
         mysql.connection.commit()
         return redirect(url_for('system'))
 
@@ -100,7 +100,7 @@ def deleteStudents(id):
     cur = mysql.connection.cursor()
     cur.execute('DELETE FROM students WHERE id = {0}'.format(id))
     mysql.connection.commit()
-    flash('Employee Removed Successfully')
+    flash('Student Removed Successfully')
     return redirect(url_for('system'))
 
 
